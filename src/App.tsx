@@ -2,8 +2,10 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import CharactersPage from './components/CharactersPage';
+import RelationshipsPage from './components/RelationshipsPage';
 import EventsPage from './components/EventsPage';
 import GalleryPage from './components/GalleryPage';
+import NewsPage from './components/NewsPage';
 import OrderPage from './components/OrderPage';
 
 function App() {
@@ -15,10 +17,14 @@ function App() {
         return <HomePage onNavigate={setCurrentPage} />;
       case 'characters':
         return <CharactersPage />;
+      case 'relationships':
+        return <RelationshipsPage />;
       case 'events':
         return <EventsPage />;
       case 'gallery':
         return <GalleryPage />;
+      case 'news':
+        return <NewsPage />;
       case 'order':
         return <OrderPage />;
       default:

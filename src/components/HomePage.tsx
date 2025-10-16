@@ -6,8 +6,8 @@ interface HomePageProps {
 
 export default function HomePage({ onNavigate }: HomePageProps) {
   const videos = [
-    { id: 'TnbnIbLUYO8', title: 'Official Trailer' },
-    { id: 'uUEnPKOU0dk', title: 'Gameplay Preview' },
+    { id: 'TnbnIbLUYO8', title: 'Prototype Teaser 1' },
+    { id: 'uUEnPKOU0dk', title: 'Prototype Teaser 2' },
   ];
 
   return (

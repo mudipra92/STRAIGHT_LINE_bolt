@@ -12,8 +12,10 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
   const navItems = [
     { id: 'home', label: 'HOME' },
     { id: 'characters', label: 'CHARACTERS' },
+    { id: 'relationships', label: 'RELATIONSHIPS' },
     { id: 'events', label: 'EVENTS' },
     { id: 'gallery', label: 'GALLERY' },
+    { id: 'news', label: 'NEWS' },
     { id: 'order', label: 'ORDER' },
   ];
 

@@ -14,25 +14,40 @@ export default function OrderPage() {
     {
       id: 'standard',
       name: 'Standard Edition',
-      price: '$59.99',
+      price: 'Rp 899.000',
       features: ['Base Game', 'Digital Soundtrack', 'Art Book (Digital)'],
     },
     {
       id: 'deluxe',
       name: 'Deluxe Edition',
-      price: '$79.99',
+      price: 'Rp 1.199.000',
       features: ['Base Game', 'Digital Soundtrack', 'Art Book (Digital)', 'Season Pass', 'Exclusive Character Skins'],
     },
     {
       id: 'collectors',
       name: 'Collectors Edition',
-      price: '$149.99',
+      price: 'Rp 2.249.000',
       features: ['Base Game', 'Digital Soundtrack', 'Art Book (Physical)', 'Season Pass', 'Exclusive Character Skins', 'Limited Edition Steelbook', 'Collector\'s Box', 'Figure Set'],
     },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const editionName = editions.find(ed => ed.id === formData.edition)?.name || 'Standard Edition';
+    const editionPrice = editions.find(ed => ed.id === formData.edition)?.price || 'Rp 899.000';
+
+    const message = `*STRAIGHT LINE Pre-Order*%0A%0A` +
+      `Name: ${formData.name}%0A` +
+      `Email: ${formData.email}%0A` +
+      `Edition: ${editionName}%0A` +
+      `Price: ${editionPrice}%0A` +
+      `Platform: ${formData.platform}%0A%0A` +
+      `I would like to pre-order STRAIGHT LINE!`;
+
+    const whatsappUrl = `https://wa.me/6281398767167?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };
@@ -156,7 +171,7 @@ export default function OrderPage() {
           </form>
 
           <p className="text-gray-500 text-sm mt-6 text-center">
-            * This is a demo order form. No actual payment will be processed.
+            * Clicking submit will open WhatsApp to complete your order.
           </p>
         </div>
       </div>
